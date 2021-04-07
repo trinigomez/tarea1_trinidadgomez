@@ -1,0 +1,29 @@
+<h1>Temporadas Breaking Bad<h1>
+
+    <div class="Seasons" id="Seasons">
+        <% for i in 1..@num_seasons%>
+            <h3 onclick="showSeasons(<%=i %>)">Temporada <%= i %></h3>
+            <div class="season-episodes" id="season-episodes">
+            <% @episodes.each do |episode|%>
+                <% if episode["season"] == i.to_s %>
+                    <h4><%= episode["title"]%></h4>
+                <% end %>
+            <% end %>
+        </div>
+        <% end %>
+
+    </div>
+
+    <script>
+        function showSeasons(num) {
+            var episodes = document.getElementsByClassName("season-episodes")
+            if (episodes[num-1].style.display == "none") {
+                episodes[num-1].style.display="block"
+            } else {
+                episodes[num-1].style.display="none"
+            }
+        }
+    </script>
+
+
+
