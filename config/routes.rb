@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get "/episodes", to: "episodes#index"
   resources :breaking_bad, only: [:index, :show]
   resources :better_call_saul, only: [:index, :show]
+  get "/characters/:name", to: "characters#show", :as => 'character'
+  #resources :characters, only: [:show]
   root 'series#index', as: 'home'
 end
