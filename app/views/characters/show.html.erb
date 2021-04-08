@@ -1,0 +1,25 @@
+<h1><%= @character["name"]%></h1>
+
+<%= image_tag @character["img"] %>
+
+<div>
+    <h3>Nombre: <%= @character["name"]%></h3>
+    <h3>Apodo: <%= @character["nickname"]%></h3>
+    <h3>Interpretado/a por: <%= @character["portrayes"]%></h3>
+    <h3>Ocupacion: <%= @character["ocupation"] %></h3>
+    <h3>Estado: <%= @character["status"] %></h3>
+    <h3>Temporadas Breaking Bad: 
+        <% if @character["appearance"].any? %>
+            <%= @character["appearance"] %>
+        <% else %>
+            No actua en Breaking Bad
+        <% end %>
+    </h3>
+    <h3>Temporadas Better Call Saul: 
+        <% if @character["better_call_saul_appearance"].any? %>
+            <%= @character["better_call_saul_appearance"] %>
+        <% else %>
+            No actua en Better Call Saul
+        <% end %>
+    </h3>
+</div>
