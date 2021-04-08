@@ -1,0 +1,12 @@
+<h1><%= @episode["series"] %></h1>
+
+<h3>Nombre: <%= @episode["title"]%></h3>
+<h3>Temporada: <%= @episode["season"]%></h3>
+<h3>Capitulo: <%= @episode["episode"]%></h3>
+<h3>Fecha estreno: <%= DateTime.parse(@episode["air_date"]).to_date.to_formatted_s(:long)%></h3>
+<h3>Personajes:</h3>
+<div>
+    <% @episode["characters"].each do |character|%>
+        <h4><%= character %></h4>
+    <% end %>
+</div>
