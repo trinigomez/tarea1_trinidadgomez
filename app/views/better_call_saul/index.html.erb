@@ -6,7 +6,7 @@
             <div class="season-episodes" id="season-episodes">
             <% @episodes.each do |episode|%>
                 <% if episode["season"] == i.to_s %>
-                    <h4><%= episode["title"]%></h4>
+                    <h4><%= episode["episode"] %>. <%= link_to episode["title"] , better_call_saul_path(episode["episode_id"]) %></h3>
                 <% end %>
             <% end %>
         </div>
