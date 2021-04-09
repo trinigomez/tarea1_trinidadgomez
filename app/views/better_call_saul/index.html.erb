@@ -17,10 +17,15 @@
     <script>
         function showSeasons(num) {
             var episodes = document.getElementsByClassName("season-episodes")
-            if (episodes[num-1].style.display == "none") {
-                episodes[num-1].style.display="block"
-            } else {
+            if (episodes[num-1].style.display == "block") {
                 episodes[num-1].style.display="none"
+            } else {
+                episodes[num-1].style.display="block"
             }
+        }
+
+        if ('<%= @show_season %>' != "") {
+            var season = document.getElementsByClassName("season-episodes")
+            season['<%= @show_season %>' - 1].style.display = "block"
         }
     </script>
