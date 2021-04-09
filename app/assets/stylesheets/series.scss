@@ -1,3 +1,18 @@
-// Place all the styles related to the Series controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.series-option {
+    text-align: center;
+    display: inline-block;
+    padding: 20px;
+    img {
+        width: 250px;
+    }
+    h3 {
+        margin-top: 5px;
+        color: white;
+    }
+}
+
+.series-option a:link, .series-option a:visited {
+    text-decoration:none;
+    color:inherit;
+}
+

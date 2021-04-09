@@ -1,0 +1,36 @@
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color:#364858;
+    color: white;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.home-button {
+    float: left;
+    padding: 10px;
+    width: 50px;
+    padding: 20px;
+   
+}
+
+.home-button a:link, .home-button a:visited {
+    text-decoration:none;
+    color:inherit;
+    font-size: 30px;
+}
+
+.navbar {
+    background-color: #1E2831;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: inline-block;
+}
+
+.search-bar {
+    display: inline-block;
+    padding: 20px;
+    float: right;
+}

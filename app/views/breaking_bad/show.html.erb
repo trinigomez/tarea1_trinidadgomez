@@ -5,7 +5,7 @@
 <h3>Capitulo: <%= @episode["episode"]%></h3>
 <h3>Fecha estreno: <%= DateTime.parse(@episode["air_date"]).to_date.to_formatted_s(:long)%></h3>
 <h3>Personajes:</h3>
-<div>
+<div class="episode-characters">
     <% @episode["characters"].each do |character|%>
         <h4><%= link_to character, character_path(character.tr('.', '')) %></h4>
     <% end %>

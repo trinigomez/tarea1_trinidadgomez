@@ -2,7 +2,7 @@
 
 <% if @results.any?%>
     <% @results.each do |result|%>
-        <h3><%= link_to result["name"], character_path(result["name"].tr('.', '')) %></h3>
+        <h3 class="episode-characters"><%= link_to result["name"], character_path(result["name"].tr('.', '')) %></h3>
     <% end %>
 <% else %>
     <h3>No hay resultados coincidentes para la busqueda '<%= @busqueda %>'</h3>
