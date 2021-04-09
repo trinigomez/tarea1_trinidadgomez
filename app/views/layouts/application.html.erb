@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <%= link_to "Home", home_path%>
+      <form class="search-bar" action="/search">
+        <input type="text" name="q" placeholder="Buscar">
+        <button type="submit">Buscar</button>
+      </form>
+    </div>
     <%= yield %>
   </body>
 </html>

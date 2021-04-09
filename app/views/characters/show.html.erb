@@ -5,21 +5,36 @@
 <div>
     <h3>Nombre: <%= @character["name"]%></h3>
     <h3>Apodo: <%= @character["nickname"]%></h3>
-    <h3>Interpretado/a por: <%= @character["portrayes"]%></h3>
-    <h3>Ocupacion: <%= @character["ocupation"] %></h3>
+    <h3>Interpretado/a por: <%= @character["portrayed"]%></h3>
+    <h3>Ocupacion: 
+        <% @character["occupation"].each do |occupation|%>
+            <h4><%= occupation %></h4>
+        <% end %>
+    </h3>
     <h3>Estado: <%= @character["status"] %></h3>
     <h3>Temporadas Breaking Bad: 
         <% if @character["appearance"].any? %>
-            <%= @character["appearance"] %>
+            <% @character["appearance"].each do |season|%>
+                <%= link_to season, breaking_bad_index_path(season) %>
+            <% end %>
         <% else %>
             No actua en Breaking Bad
         <% end %>
     </h3>
     <h3>Temporadas Better Call Saul: 
         <% if @character["better_call_saul_appearance"].any? %>
-            <%= @character["better_call_saul_appearance"] %>
+             <% @character["better_call_saul_appearance"].each do |season|%>
+                <%= link_to season, better_call_saul_index_path(season) %>
+            <% end %>
         <% else %>
             No actua en Better Call Saul
         <% end %>
     </h3>
+
+    <h3>Citas:</h3>
+    <ul>
+        <% @quotes.each do |quote|%>
+            <li><%= quote["quote"] %></li>
+        <% end %>
+    </ul>
 </div>

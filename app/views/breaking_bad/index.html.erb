@@ -1,20 +1,33 @@
-<h1>Temporadas Breaking Bad</h1>
+<body>
+    <h1>Temporadas Breaking Bad</h1>
 
-    <div class="Seasons" id="Seasons">
-        <% for i in 1..@num_seasons%>
-            <h3 onclick="showSeasons(<%=i %>)">Temporada <%= i %></h3>
-            <div class="season-episodes" id="season-episodes">
-            <% @episodes.each do |episode|%>
-                <% if episode["season"] == i.to_s %>
-                    <h4><%= episode["episode"] %>. <%= link_to episode["title"] , breaking_bad_path(episode["episode_id"]) %></h3>
+        <div class="Seasons" id="Seasons">
+            <% for i in 1..@num_seasons%>
+                <h3 onclick="showSeasons(<%=i %>)">Temporada <%= i %></h3>
+                <div class="season-episodes" id="season-episodes">
+                <% @episodes.each do |episode|%>
+                    <% if episode["season"] == i.to_s %>
+                        <h4><%= episode["episode"] %>. <%= link_to episode["title"] , breaking_bad_path(episode["episode_id"]) %></h3>
+                    <% end %>
                 <% end %>
+            </div>
             <% end %>
-        </div>
-        <% end %>
 
-    </div>
+        </div>
+</body>
 
     <script>
+
+        function load_season(to_show) {
+            if (typeof(to_show) != "undefined") {
+                alert(to_show)
+                document.getElementsByClassName("season-episodes")[to_show -1].style.display = "block"
+            } else {
+                alert("vacia")
+            }
+            ;
+        }
+
         function showSeasons(num) {
             var episodes = document.getElementsByClassName("season-episodes")
             if (episodes[num-1].style.display == "none") {
