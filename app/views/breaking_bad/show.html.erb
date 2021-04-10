@@ -1,13 +1,14 @@
 <h1><%= @episode["series"] %></h1>
-
-<h3>Nombre: <%= @episode["title"]%></h3>
-<h3>Temporada: <%= @episode["season"]%></h3>
-<h3>Capitulo: <%= @episode["episode"]%></h3>
-<h3>Fecha estreno: <%= DateTime.parse(@episode["air_date"]).to_date.to_formatted_s(:long)%></h3>
-<h3>Personajes:</h3>
-<div class="episode-characters">
+<div class="episode-container">
+    <h3><span>Nombre: </span><%= @episode["title"]%></h3>
+    <h3><span>Temporada: </span><%= @episode["season"]%></h3>
+    <h3><span>Capitulo: </span><%= @episode["episode"]%></h3>
+    <h3><span>Fecha estreno: </span><%= DateTime.parse(@episode["air_date"]).to_date.to_formatted_s(:long)%></h3>
+    <h3><span>Personajes:</span></h3>
     <% @episode["characters"].each do |character|%>
-        <h4><%= link_to character, character_path(character.tr('.', '')) %></h4>
+        <div class="episode-characters">
+            <h4><%= link_to character, character_path(character.tr('.', '')) %></h4>
+        </div>
     <% end %>
 </div>
 

@@ -1,7 +1,3 @@
-// Place all the styles related to the BreakingBad controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 .Seasons {
     display: block;
     margin-left: 20px;
@@ -10,8 +6,14 @@
         color: #1E2831;
     }
     img {
-        width: 300px;
+        max-width:100%;
+        max-height:100%;
     }
+}
+
+.image-container {
+    max-width: 300px;
+    max-height: auto;
 }
 
 .season-episodes {
@@ -19,6 +21,7 @@
     margin-left: 40px;
     color: white;
     font-weight: lighter;
+
     h4 {
         font-weight: lighter;
     }
@@ -29,9 +32,34 @@
     color:inherit;
 }
 
+.episode-characters {
+    margin-left: 20px;
+}
+
 .episode-characters a:link, .episode-characters a:visited {
     text-decoration:none;
     color:inherit;
 }
 
+.episode-characters:hover {
+    opacity: 0.5;
+}
 
+.seasons-container {
+    margin-left: 20px;
+
+    h3:hover {
+        opacity: 0.5;
+    }
+    h4:hover {
+        opacity: 0.5;
+    }
+}
+
+.episode-container {
+    margin-left: 20px;
+
+    span {
+        color: #1E2831;
+    }
+}
