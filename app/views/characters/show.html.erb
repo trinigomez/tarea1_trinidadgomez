@@ -4,40 +4,52 @@
         <div class="portrait-container"><%= image_tag @character["img"] %></div>
 
         <div class="character-info">
-            <h3>Nombre: <%= @character["name"]%></h3>
-            <h3>Apodo: <%= @character["nickname"]%></h3>
-            <h3>Interpretado/a por: <%= @character["portrayed"]%></h3>
-            <h3>Ocupacion: 
-                <% @character["occupation"].each do |occupation|%>
-                    <h4><%= occupation %></h4>
-                <% end %>
-            </h3>
-            <h3>Estado: <%= @character["status"] %></h3>
-            <h3>Temporadas Breaking Bad: 
-                <% if @character["appearance"].any? %>
-                    <% @character["appearance"].each do |season|%>
-                        <%= link_to season, breaking_bad_index_path(season) %>
+            <h3>Nombre: <span><%= @character["name"]%></span></h3>
+            <h3>Apodo: <span><%= @character["nickname"]%></span></h3>
+            <h3>Interpretado/a por: <span><%= @character["portrayed"]%></span></h3>
+            <h3>Ocupacion:
+                <span><ul> 
+                    <% @character["occupation"].each do |occupation|%>
+                        <li><h4><%= occupation %></h4></li>
                     <% end %>
-                <% else %>
-                    No actua en Breaking Bad
-                <% end %>
+                </ul></span>
+            </h3>
+            <h3>Estado: <span><%= @character["status"] %></span></h3>
+            <h3>Temporadas Breaking Bad: 
+                <span>
+                    <% if @character["appearance"].any? %>
+                        <% @character["appearance"].each do |season|%>
+                            <span class="character-seasons">
+                            <%= link_to season, breaking_bad_index_path(season) %>
+                            </span>
+                        <% end %>
+                    <% else %>
+                        No actua en Breaking Bad
+                    <% end %>
+                </span>
             </h3>
             <h3>Temporadas Better Call Saul: 
-                <% if @character["better_call_saul_appearance"].any? %>
-                    <% @character["better_call_saul_appearance"].each do |season|%>
-                        <%= link_to season, better_call_saul_index_path(season) %>
+                <span>
+                    <% if @character["better_call_saul_appearance"].any? %>
+                        <% @character["better_call_saul_appearance"].each do |season|%>
+                            <%= link_to season, better_call_saul_index_path(season) %>
+                        <% end %>
+                    <% else %>
+                        No actua en Better Call Saul
                     <% end %>
-                <% else %>
-                    No actua en Better Call Saul
-                <% end %>
+                </span>
             </h3>
 
             <h3>Citas:</h3>
-            <ul>
-                <% @quotes.each do |quote|%>
-                    <li><%= quote["quote"] %></li>
-                <% end %>
-            </ul>
+            <% if @quotes.any?%>
+                <ul>
+                    <% @quotes.each do |quote|%>
+                        <li><%= quote["quote"] %></li>
+                    <% end %>
+                </ul>
+            <%else%>
+                No tiene citas conocidas
+            <% end %>
         </div>
     </div>
 </div>

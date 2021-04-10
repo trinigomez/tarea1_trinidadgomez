@@ -19,6 +19,16 @@
 .character-info {
     margin-left: 20px;
     margin-top: 0px;
+    color: #1E2831;
+
+    span {
+        color: white;
+    }
+}
+
+.character-info a:link, .character-info a:visited {
+    text-decoration:none;
+    color:inherit;
 }
 
 .search {
@@ -35,4 +45,8 @@
     h3:hover {
         opacity: 0.5;
     }
+}
+
+.character-seasons:hover {
+    opacity: 0.5;
 }
