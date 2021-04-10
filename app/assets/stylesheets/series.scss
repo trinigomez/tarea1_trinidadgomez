@@ -5,9 +5,15 @@
     img {
         width: 250px;
     }
+    img:hover {
+        opacity: 0.5;
+    }
     h3 {
         margin-top: 5px;
         color: white;
+    }
+    h3:hover {
+        opacity: 0.5;
     }
 }
 

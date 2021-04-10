@@ -6,6 +6,7 @@
     background: linear-gradient(180deg, rgba(73,96,117,1) 0%, rgba(91,121,147,1) 43%, rgba(118,157,193,1) 100%);
     background-size: cover;
     color: white;
+    background-attachment: fixed;  
 }
 
 .home-button {
@@ -33,4 +34,22 @@
 .search-bar {
     padding: 20px;
     float: right;
+
+    button {
+        border-radius: 4px;
+        width: 80px;
+        padding: 2px;
+        background-color: white;
+        border-color: white;
+        color: #1E2831;
+        font-weight: bold;
+    }
+
+    button:hover{
+        opacity: 0.5;
+    }
+}
+
+.flex {
+    display: flex;
 }
