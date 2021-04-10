@@ -4,10 +4,24 @@
 
 .Seasons {
     display: block;
+    margin-left: 20px;
+
+    h3 {
+        color: #1E2831;
+    }
+    img {
+        width: 300px;
+    }
 }
 
 .season-episodes {
     display: none;
+    margin-left: 40px;
+    color: white;
+    font-weight: lighter;
+    h4 {
+        font-weight: lighter;
+    }
 }
 
 .season-episodes a:link, .season-episodes a:visited {
@@ -19,4 +33,5 @@
     text-decoration:none;
     color:inherit;
 }
+
 

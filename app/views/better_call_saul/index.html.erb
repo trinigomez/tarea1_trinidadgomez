@@ -1,19 +1,22 @@
-<h1>Temporadas Better Call Saul</h1>
-
-<div class="Seasons" id="Seasons">
-        <% for i in 1..@num_seasons%>
-            <h3 onclick="showSeasons(<%=i %>)">Temporada <%= i %></h3>
-            <div class="season-episodes" id="season-episodes">
-            <% @episodes.each do |episode|%>
-                <% if episode["season"] == i.to_s %>
-                    <h4><%= episode["episode"] %>. <%= link_to episode["title"] , better_call_saul_path(episode["episode_id"]) %></h3>
-                <% end %>
+<html>
+    <div class="Seasons">
+        <h1>Better Call Saul</h1>
+        <%= image_tag("bettercall.jpg")%>
+        <div id="Seasons">
+            <% for i in 1..@num_seasons%>
+                <h3 onclick="showSeasons(<%=i %>)">Temporada <%= i %></h3>
+                <div class="season-episodes" id="season-episodes">
+                    <% @episodes.each do |episode|%>
+                        <% if episode["season"] == i.to_s %>
+                            <h4><%= episode["episode"] %>. <%= link_to episode["title"] , better_call_saul_path(episode["episode_id"]) %></h3>
+                        <% end %>
+                    <% end %>
+                </div>
             <% end %>
+
         </div>
-        <% end %>
-
     </div>
-
+</html>
     <script>
         function showSeasons(num) {
             var episodes = document.getElementsByClassName("season-episodes")
